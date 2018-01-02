@@ -13,6 +13,10 @@ public class Practice9DrawPathView extends View {
 
     Paint paint = new Paint();
     Path path = new Path(); // 初始化 Path 对象
+    Paint textPaint = new Paint();
+    {
+        textPaint.setTextSize(50);
+    }
 
     public Practice9DrawPathView(Context context) {
         super(context);
@@ -39,7 +43,7 @@ public class Practice9DrawPathView extends View {
 
             canvas.drawPath(path, paint); // 绘制出 path 描述的图形（心形），大功告成
         } else {
-            canvas.drawText("device api < 21,can't use drawArc api.", 100, 100, paint);
+            canvas.drawText("device api < 21,can't use drawArc api.", 100, 100, textPaint);
         }
     }
 }

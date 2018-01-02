@@ -11,6 +11,10 @@ import android.view.View;
 public class Practice7DrawRoundRectView extends View {
 
     Paint paint = new Paint();
+    Paint textPaint = new Paint();
+    {
+        textPaint.setTextSize(50);
+    }
 
     public Practice7DrawRoundRectView(Context context) {
         super(context);
@@ -32,7 +36,7 @@ public class Practice7DrawRoundRectView extends View {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             canvas.drawRoundRect(100, 100, 500, 500, 50, 50, paint);
         } else {
-            canvas.drawText("device api < 21,can't use drawRoundRect api.", 100, 100, paint);
+            canvas.drawText("device api < 21,can't use drawRoundRect api.", 100, 100, textPaint);
         }
     }
 }

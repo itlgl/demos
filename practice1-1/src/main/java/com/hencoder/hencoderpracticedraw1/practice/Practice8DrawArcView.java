@@ -16,6 +16,7 @@ public class Practice8DrawArcView extends View {
     Paint paint3 = new Paint();
     {
         paint3.setStyle(Paint.Style.STROKE);
+        textPaint.setTextSize(50);
     }
 
     public Practice8DrawArcView(Context context) {
