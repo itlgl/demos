@@ -10,6 +10,9 @@ import android.view.View;
 public class Practice6DrawLineView extends View {
 
     Paint paint = new Paint();
+    {
+        paint.setStrokeWidth(10);
+    }
 
     public Practice6DrawLineView(Context context) {
         super(context);

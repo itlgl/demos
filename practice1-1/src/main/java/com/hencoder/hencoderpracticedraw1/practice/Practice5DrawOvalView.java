@@ -34,7 +34,7 @@ public class Practice5DrawOvalView extends View {
 
 //        练习内容：使用 canvas.drawOval() 方法画椭圆
         if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            canvas.drawOval(100, 100, 500, 500, paint);
+            canvas.drawOval(100, 100, 600, 500, paint);
         } else {
             canvas.drawText("device api < 21,can't use drawOval api.", 100, 100, paint);
         }

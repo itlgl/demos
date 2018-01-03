@@ -34,7 +34,7 @@ public class Practice7DrawRoundRectView extends View {
 
 //        练习内容：使用 canvas.drawRoundRect() 方法画圆角矩形
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            canvas.drawRoundRect(100, 100, 500, 500, 50, 50, paint);
+            canvas.drawRoundRect(100, 100, 600, 500, 50, 50, paint);
         } else {
             canvas.drawText("device api < 21,can't use drawRoundRect api.", 100, 100, textPaint);
         }
