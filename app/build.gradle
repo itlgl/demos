@@ -17,37 +17,37 @@ android {
         }
     }
 
-    signingConfigs {
-        release {
-            // 设置不使用v2版本签名
-            v2SigningEnabled false
-            storeFile file('../debug.keystore')
-            storePassword '123456'
-            keyAlias 'debug'
-            keyPassword '123456'
-        }
-        debug {
-            // 设置不使用v2版本签名
-            v2SigningEnabled false
-            storeFile file('../debug.keystore')
-            storePassword '123456'
-            keyAlias 'debug'
-            keyPassword '123456'
-        }
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
-        }
-    }
+//    signingConfigs {
+//        release {
+//            // 设置不使用v2版本签名
+//            v2SigningEnabled false
+//            storeFile file('../debug.keystore')
+//            storePassword '123456'
+//            keyAlias 'debug'
+//            keyPassword '123456'
+//        }
+//        debug {
+//            // 设置不使用v2版本签名
+//            v2SigningEnabled false
+//            storeFile file('../debug.keystore')
+//            storePassword '123456'
+//            keyAlias 'debug'
+//            keyPassword '123456'
+//        }
+//    }
+//
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//        }
+//        debug {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.debug
+//        }
+//    }
 }
 
 dependencies {
@@ -62,4 +62,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile project(':practice1-1')
+    compile project(path: ':practice1-2')
 }

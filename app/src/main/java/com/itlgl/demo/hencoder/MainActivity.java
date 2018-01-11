@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.hencoder.hencoderpracticedraw1.Practice11;
+import com.hencoder.hencoderpracticedraw2.Practice12;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
             switch(position) {
                 case 0:
                     startActivity(new Intent(context, Practice11.class));
+                    break;
+                    case 1:
+                    startActivity(new Intent(context, Practice12.class));
                     break;
             }
         }
