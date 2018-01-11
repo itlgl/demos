@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
     private List<String> getData() {
         List<String> list = new ArrayList<>();
-        list.add("view1-1");
-        list.add("view1-2");
-        list.add("view1-3");
+        list.add("practice1-1");
+        list.add("practice1-2");
+        list.add("practice1-3");
         return list;
     }
 
