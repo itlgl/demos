@@ -15,6 +15,8 @@ public class Practice12MeasureTextView extends View {
     String text2 = "4.5";
     String text3 = "公斤";
 
+    float text1Width, text2Width, text3Width;
+
     public Practice12MeasureTextView(Context context) {
         super(context);
     }
@@ -31,6 +33,10 @@ public class Practice12MeasureTextView extends View {
         paint1.setTextSize(60);
         paint2.setTextSize(120);
         paint2.setColor(Color.parseColor("#E91E63"));
+
+        text1Width = paint1.measureText(text1);
+        text2Width = paint2.measureText(text2);
+        text3Width = paint1.measureText(text3);
     }
 
     @Override
@@ -40,7 +46,7 @@ public class Practice12MeasureTextView extends View {
         // 使用 Paint.measureText 测量出文字宽度，让文字可以相邻绘制
 
         canvas.drawText(text1, 50, 200, paint1);
-        canvas.drawText(text2, 50 + 100, 200, paint2);
-        canvas.drawText(text3, 50 + 200, 200, paint1);
+        canvas.drawText(text2, 50 + text1Width, 200, paint2);
+        canvas.drawText(text3, 50 + text1Width + text2Width, 200, paint1);
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -42,6 +43,11 @@ public class Practice13GetTextBoundsView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        Rect text1Bounds = new Rect();
+        paint2.getTextBounds(text1, 0, text1.length(), text1Bounds);
+        top = getHeight() / 2 - (text1Bounds.bottom - text1Bounds.top) / 2;
+        bottom = getHeight() / 2 + (text1Bounds.bottom - text1Bounds.top) / 2;
 
         canvas.drawRect(50, top, getWidth() - 50, bottom, paint1);
 
