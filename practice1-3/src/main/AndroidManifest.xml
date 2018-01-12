@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hencoder.hencoderpracticedraw3" >
+    <application>
+        <activity android:name="com.hencoder.hencoderpracticedraw3.Practice13">
+        </activity>
+    </application>
+</manifest>

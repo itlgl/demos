@@ -13,10 +13,21 @@ import android.view.View;
 
 public class Practice03SweepGradientView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint paint1 = new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint paint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint paint3 = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     {
-        Shader shader = new SweepGradient(300, 300, Color.parseColor("#E91E63"), Color.parseColor("#2196F3"));
+        Shader shader = new SweepGradient(300, 300, Color.parseColor("#E91E63"),
+                Color.parseColor("#2196F3"));
         paint.setShader(shader);
+
+        paint1.setShader(new SweepGradient(650, 100, Color.parseColor("#E91E63"),
+                Color.parseColor("#2196F3")));
+        paint2.setShader(new SweepGradient(750, 320, Color.parseColor("#E91E63"),
+                Color.parseColor("#2196F3")));
+        paint3.setShader(new SweepGradient(850, 540, Color.parseColor("#E91E63"),
+                Color.parseColor("#2196F3")));
     }
 
     public Practice03SweepGradientView(Context context) {
@@ -41,5 +52,9 @@ public class Practice03SweepGradientView extends View {
         super.onDraw(canvas);
 
         canvas.drawCircle(300, 300, 200, paint);
+
+        canvas.drawRect(550, 0, 950, 200, paint1);
+        canvas.drawRect(550, 220, 950, 420, paint2);
+        canvas.drawRect(550, 440, 950, 640, paint3);
     }
 }

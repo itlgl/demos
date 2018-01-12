@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.hencoder.hencoderpracticedraw1.Practice11;
 import com.hencoder.hencoderpracticedraw2.Practice12;
+import com.hencoder.hencoderpracticedraw3.Practice13;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     private List<String> getData() {
         List<String> list = new ArrayList<>();
-        list.add("practice1-1");
-        list.add("practice1-2");
-        list.add("practice1-3");
+        list.add("1-1 绘制基础");
+        list.add("1-2 paint详解");
+        list.add("1-3 文字的绘制");
         return list;
     }
 
@@ -46,12 +47,15 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            switch(position) {
+            switch (position) {
                 case 0:
                     startActivity(new Intent(context, Practice11.class));
                     break;
-                    case 1:
+                case 1:
                     startActivity(new Intent(context, Practice12.class));
+                    break;
+                case 2:
+                    startActivity(new Intent(context, Practice13.class));
                     break;
             }
         }

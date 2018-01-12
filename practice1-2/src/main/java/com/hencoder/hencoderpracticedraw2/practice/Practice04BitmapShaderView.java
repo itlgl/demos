@@ -1,14 +1,30 @@
 package com.hencoder.hencoderpracticedraw2.practice;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Shader;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.hencoder.hencoderpracticedraw2.R;
+
 public class Practice04BitmapShaderView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint paint1 = new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint paint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+    {
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.batman);
+        paint.setShader(new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+
+        paint1.setShader(new BitmapShader(bitmap, Shader.TileMode.MIRROR, Shader.TileMode.MIRROR));
+        paint2.setShader(new BitmapShader(bitmap, Shader.TileMode.REPEAT, Shader.TileMode.REPEAT));
+    }
 
     public Practice04BitmapShaderView(Context context) {
         super(context);
@@ -32,5 +48,8 @@ public class Practice04BitmapShaderView extends View {
         super.onDraw(canvas);
 
         canvas.drawCircle(200, 200, 200, paint);
+
+        canvas.drawRect(550, 0, 950, 400, paint1);
+        canvas.drawRect(550, 420, 950, 820, paint2);
     }
 }

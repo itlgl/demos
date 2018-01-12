@@ -63,4 +63,5 @@ dependencies {
 
     compile project(':practice1-1')
     compile project(path: ':practice1-2')
+    compile project(path: ':practice1-3')
 }
