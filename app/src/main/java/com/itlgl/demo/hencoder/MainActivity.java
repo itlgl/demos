@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.hencoder.hencoderpracticedraw1.Practice11;
 import com.hencoder.hencoderpracticedraw2.Practice12;
 import com.hencoder.hencoderpracticedraw3.Practice13;
+import com.hencoder.hencoderpracticedraw4.Practice14Activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("1-1 绘制基础");
         list.add("1-2 paint详解");
         list.add("1-3 文字的绘制");
+        list.add("1-4 Canvas 对绘制的辅助");
         return list;
     }
 
@@ -56,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 2:
                     startActivity(new Intent(context, Practice13.class));
+                    break;
+                case 4:
+                    startActivity(new Intent(context, Practice14Activity.class));
                     break;
             }
         }
