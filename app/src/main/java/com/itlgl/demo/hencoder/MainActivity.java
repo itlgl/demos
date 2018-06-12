@@ -13,6 +13,8 @@ import com.hencoder.hencoderpracticedraw1.Practice11;
 import com.hencoder.hencoderpracticedraw2.Practice12;
 import com.hencoder.hencoderpracticedraw3.Practice13;
 import com.hencoder.hencoderpracticedraw4.Practice14Activity;
+import com.hencoder.hencoderpracticedraw5.Practice15Activity;
+import com.hencoder.hencoderpracticedraw6.Practice16Activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         list.add("1-2 paint详解");
         list.add("1-3 文字的绘制");
         list.add("1-4 Canvas 对绘制的辅助");
+        list.add("1-5 自定义View绘制顺序");
+        list.add("1-6 属性动画（上手篇）");
         return list;
     }
 
@@ -61,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 3:
                     startActivity(new Intent(context, Practice14Activity.class));
+                    break;
+                case 4:
+                    startActivity(new Intent(context, Practice15Activity.class));
+                    break;
+                case 5:
+                    startActivity(new Intent(context, Practice16Activity.class));
                     break;
             }
         }
