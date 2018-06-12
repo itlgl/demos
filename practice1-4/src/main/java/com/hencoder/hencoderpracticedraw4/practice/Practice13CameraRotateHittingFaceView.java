@@ -2,6 +2,7 @@ package com.hencoder.hencoderpracticedraw4.practice;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -47,6 +48,41 @@ public class Practice13CameraRotateHittingFaceView extends View {
         animator.setDuration(5000);
         animator.setInterpolator(new LinearInterpolator());
         animator.setRepeatCount(ValueAnimator.INFINITE);
+
+        setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String tipMsg = "通过camera.setLocation(0, 0, -20)让摄像机远离\n" +
+                        "通过matrix.postTranslate(centerX, centerY);\n" +
+                        "   matrix.preTranslate(-centerX, -centerY);\n" +
+                        "来完成旋转的居中（Matrix先在开头post右乘位移到bitmap中心，最后pre左乘位移移回原点）\n" +
+                        "\n问题：为何setLocation设置-10或者-20效果基本一致？？？\n\n" +
+                        "代码：\n" +
+                        "int bitmapWidth = bitmap.getWidth();\n" +
+                        "int bitmapHeight = bitmap.getHeight();\n" +
+                        "int centerX = point.x + bitmapWidth / 2;\n" +
+                        "int centerY = point.y + bitmapHeight / 2;\n" +
+                        "\n" +
+                        "camera.save();\n" +
+                        "matrix.reset();\n" +
+                        "camera.rotateX(degree);\n" +
+                        "camera.setLocation(0, 0, -20);\n" +
+                        "camera.getMatrix(matrix);\n" +
+                        "camera.restore();\n" +
+                        "matrix.postTranslate(centerX, centerY);\n" +
+                        "matrix.preTranslate(-centerX, -centerY);\n" +
+                        "canvas.save();\n" +
+                        "canvas.concat(matrix);\n" +
+                        "canvas.drawBitmap(bitmap, point.x, point.y, paint);\n" +
+                        "canvas.restore();";
+                new AlertDialog.Builder(getContext())
+                        .setTitle("tip")
+                        .setMessage(tipMsg)
+                        .setNegativeButton("ok", null)
+                        .show();
+            }
+        });
     }
 
     @Override
@@ -79,10 +115,11 @@ public class Practice13CameraRotateHittingFaceView extends View {
         camera.save();
         matrix.reset();
         camera.rotateX(degree);
+        camera.setLocation(0, 0, -20);
         camera.getMatrix(matrix);
         camera.restore();
-        matrix.preTranslate(-centerX, -centerY);
         matrix.postTranslate(centerX, centerY);
+        matrix.preTranslate(-centerX, -centerY);
         canvas.save();
         canvas.concat(matrix);
         canvas.drawBitmap(bitmap, point.x, point.y, paint);

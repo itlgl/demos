@@ -1,5 +1,6 @@
 package com.hencoder.hencoderpracticedraw4.practice;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,6 +30,22 @@ public class Practice01ClipRectView extends View {
 
     {
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maps);
+
+        setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String tipMsg = "canvas.save();\n" +
+                        "canvas.clipRect(left + 50, top + 50, left + 300, top + 200);\n" +
+                        "canvas.drawBitmap(bitmap, left, top, paint);\n" +
+                        "canvas.restore();";
+                new AlertDialog.Builder(getContext())
+                        .setTitle("tip")
+                        .setMessage(tipMsg)
+                        .setNegativeButton("ok", null)
+                        .show();
+            }
+        });
     }
 
     @Override
@@ -38,6 +55,9 @@ public class Practice01ClipRectView extends View {
         int left = (getWidth() - bitmap.getWidth()) / 2;
         int top = (getHeight() - bitmap.getHeight()) / 2;
 
+        canvas.save();
+        canvas.clipRect(left + 50, top + 50, left + 300, top + 200);
         canvas.drawBitmap(bitmap, left, top, paint);
+        canvas.restore();
     }
 }

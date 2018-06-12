@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 case 2:
                     startActivity(new Intent(context, Practice13.class));
                     break;
-                case 4:
+                case 3:
                     startActivity(new Intent(context, Practice14Activity.class));
                     break;
             }
