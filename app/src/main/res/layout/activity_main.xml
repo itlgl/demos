@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_start_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启server" />
+
+    <Button
+        android:id="@+id/btn_stop_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭server" />
+
+    <Button
+        android:id="@+id/btn_start_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="开启client" />
+
+    <Button
+        android:id="@+id/btn_stop_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭client" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="log显示在这里"/>
+    </ScrollView>
+</LinearLayout>
