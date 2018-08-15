@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AID："/>
+
+        <EditText
+            android:id="@+id/et_aid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A0000005591010FFFFFFFF8900000100"/>
+
+        <Button
+            android:id="@+id/btn_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试打开通道" />
+
+        <Button
+            android:id="@+id/btn_open_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试打开通道(可配置p2)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="apdu："/>
+
+        <EditText
+            android:id="@+id/et_apdu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00a4040000"/>
+
+        <Button
+            android:id="@+id/btn_transmit_apdu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送apdu" />
+
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关闭通道" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_layout">
+
+        <TextView
+            android:id="@+id/tv_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="log显示区" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/clear_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="清空log" />
+</android.support.constraint.ConstraintLayout>
