@@ -8,8 +8,8 @@
 > 5、手机端可点击“通过蓝牙发送消息”和手机端进行通信
 
 ## 测试截图
-![1.png](https://raw.githubusercontent.com/itlgl/demo_bluetoothpan/master/screenshot/1.png)
-![2.png](https://raw.githubusercontent.com/itlgl/demo_bluetoothpan/master/screenshot/2.png)
+![1.png](https://raw.githubusercontent.com/itlgl/demos/master/demo_bluetoothpan/screenshot/1.png)
+![2.png](https://raw.githubusercontent.com/itlgl/demos/master/demo_bluetoothpan/screenshot/2.png)
 
 ## 参考
  - [蓝牙共享网络BluetoothPan](https://blog.csdn.net/z191726501/article/details/53071151)
