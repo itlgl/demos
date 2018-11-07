@@ -1,0 +1,2 @@
+# TestLANCommunication
+同一个局域网下两个设备进行发现和通信的demo
