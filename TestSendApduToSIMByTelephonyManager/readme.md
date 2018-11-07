@@ -17,7 +17,7 @@ Android4.4开始只有priv-app下的app拥有系统权限（https://github.com/a
 
 ## 截图和log
 
-![截图](https://github.com/itlgl/TestSendApduToSIMByTelephonyManager/raw/master/screenshot/1.png)
+![截图](https://github.com/itlgl/demos/raw/master/TestSendApduToSIMByTelephonyManager/screenshot/1.png)
 
 部分log：
 ```console
