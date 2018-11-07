@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    defaultConfig {
+        applicationId "com.itlgl.demo.hencoder"
+        minSdkVersion 18
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    signingConfigs {
+//        release {
+//            // 设置不使用v2版本签名
+//            v2SigningEnabled false
+//            storeFile file('../debug.keystore')
+//            storePassword '123456'
+//            keyAlias 'debug'
+//            keyPassword '123456'
+//        }
+//        debug {
+//            // 设置不使用v2版本签名
+//            v2SigningEnabled false
+//            storeFile file('../debug.keystore')
+//            storePassword '123456'
+//            keyAlias 'debug'
+//            keyPassword '123456'
+//        }
+//    }
+//
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//        }
+//        debug {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.debug
+//        }
+//    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.4.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-core-ui:25.4.0'
+    compile 'com.android.support:design:25.4.0'
+    testCompile 'junit:junit:4.12'
+
+    compile project(':practice1-1')
+    compile project(path: ':practice1-2')
+    compile project(path: ':practice1-3')
+    compile project(path: ':practice1-4')
+    compile project(path: ':practice1-5')
+    compile project(path: ':practice1-6')
+    compile project(path: ':practice1-7')
+    compile project(path: ':practice1-jike')
+}
